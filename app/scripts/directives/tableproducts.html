@@ -1,0 +1,23 @@
+<div class="tableproducts">
+    <table>
+        <tr>
+            <td>Nombre</td>    
+            <td>Costo($)</td>
+            <td>Ganacia(%)</td> 
+            <td>Valor</td>
+            <td>Productor</td>    
+            <td>Acci&oacute;n</td>
+        </tr>
+        <tr ng-repeat="p in listProducts track by $index" >
+            <td>{{p.name}}</td>    
+            <td>${{p.cost}}</td>
+            <td>{{p.gain}}%</td> 
+            <td>{{p.value}}</td>
+            <td>{{p.producer}}</td>   
+            <td>
+                <a ng-click="editProduct(p)">Editar</a>
+                <a ng-click="deleteProduct(p)">Eliminar</a>
+            </td>   
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,28 @@
+<div class="managerproduct">
+    <table ng-if="isEditing || isAdding">
+        <tr>
+            <td>Nombre</td>    
+            <td><input type="text" ng-model="productselected.name" id="productName"/></td>    
+        </tr>
+        <tr>            
+            <td>Costo($)</td>
+            <td><input type="number" ng-model="productselected.cost" id="productCost" ng-change="calcValueGain(productselected.cost,productselected.gain)"/></td>            
+        </tr>       
+        <tr>
+            <td>Ganacia(%)</td>  
+            <td><input type="text" ng-model="productselected.gain" id="productGain" ng-change="calcValueGain(productselected.cost,productselected.gain)"/></td> 
+        </tr>        
+        <tr>           
+            <td>Valor</td>
+            <td><input type="number" ng-model="productselected.value" readonly id="productValue"/></td>           
+        </tr>       
+        <tr>            
+            <td>Productor</td>   
+            <td><input type="text" ng-model="productselected.producer" id="productProducer"/></td>   
+        </tr>        
+    </table>
+    <br/>
+    <button id="buttonAddNew" type="button" class="btn btn-default" ng-if="!isEditing && !isAdding" ng-click="addProduct()">Agregar Nuevo Producto</button>
+    <button id="buttonAccept" type="button" class="btn btn-default" ng-if="isEditing || isAdding" ng-click="accept()">Listo!</button>
+    <button id="buttonCancel" type="button" class="btn btn-default" ng-if="isEditing || isAdding" ng-click="cancel()">Cancelar</button>
+</div>

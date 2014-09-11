@@ -1,0 +1,45 @@
+.tableproducts table{
+ border: 1px solid;   
+}
+.tableproducts table tr:first-child{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px; 
+    border: 1px solid; 
+}
+.tableproducts table tr:first-child td{
+    width: 100px;
+    padding: 5px;
+    text-align: center; 
+    border: 1px solid; 
+}
+
+.tableproducts table tr td{
+    width: 100px;
+    padding: 5px;
+    text-align: center; 
+    font-size: 16px; 
+    border: 1px solid; 
+    cursor: pointer;
+}
+
+.tableproducts table tr:first-child:hover{
+    background-color: #fff;
+}
+
+.tableproducts table tr:hover{
+    background-color: #ccc;
+}
+
+.managerproduct table{
+ border: 1px solid;   
+}
+
+.managerproduct table tr td{
+    width: 100px;
+    padding: 5px;
+    text-align: center; 
+    font-size: 16px; 
+    border: 1px solid; 
+    cursor: pointer;
+}
