@@ -1,0 +1,29 @@
+describe('PHC Home', function() {
+    var ptor;
+    var home = 'http://localhost:7001/PHC/SrvPHCNoSeguro?dniUsuarioTran=71732652&loginUserService=JUANACRO&nameUserService=JUANACRO&modoIngreso=4&tipoDniusuarioTran=CC&valorDerecho=20&claseSeguridad=suramericana.pubs.mus.RepositorioMUS&tokenAutenticacion=JNDL8TyGY1PbC3BrVb#/';
+    beforeEach(function() {
+        browser.get(home);
+        ptor = protractor.getInstance();
+    });
+
+    it('test Move page with click in the first appointment Task', function() {
+        var dateAppointments = element.all(by.repeater('appointment in appointmentsHours'));
+        dateAppointments.first().then(function(dateAppointment) {
+            dateAppointment.click().then(function() {
+                expect(ptor.getCurrentUrl()).toMatch(/\/atencionControl|\/firstAppointment/);
+            }, function() {
+                expect(false).toBe(true);
+            });
+        });
+    });
+
+    it('test Move page with Print', function() {
+        element(by.model('identification')).sendKeys('12345');
+        element(by.model('findPatientButton')).click().then(function() {
+            expect(ptor.getCurrentUrl()).toMatch(/\/printHC/);
+            expect(ptor.isElementPresent(by.css('.printHC'))).toBe(true);
+        }, function() {
+            expect(false).toBe(true);
+        });
+    });
+});
