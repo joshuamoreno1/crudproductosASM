@@ -1,25 +1,26 @@
 .tableproducts table{
- border: 1px solid;   
+    border: 1px solid #a3a5a7;
+
 }
 .tableproducts table tr:first-child{
     padding: 10px;
     font-weight: bold;
     font-size: 18px; 
-    border: 1px solid; 
+    border: 1px solid #a3a5a7; 
 }
 .tableproducts table tr:first-child td{
     width: 100px;
     padding: 5px;
     text-align: center; 
-    border: 1px solid; 
+    border: 1px solid #a3a5a7; 
 }
 
 .tableproducts table tr td{
     width: 100px;
     padding: 5px;
     text-align: center; 
-    font-size: 16px; 
-    border: 1px solid; 
+    font-size: 14px;
+    border: 1px solid #a3a5a7; 
     cursor: pointer;
 }
 
@@ -28,11 +29,17 @@
 }
 
 .tableproducts table tr:hover{
-    background-color: #ccc;
+    background-color: #b7b7b7;
 }
 
 .managerproduct table{
- border: 1px solid;   
+    border: 1px solid #a3a5a7;
+}
+
+.managerproduct table tr td:first-child{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px; 
 }
 
 .managerproduct table tr td{
@@ -40,6 +47,16 @@
     padding: 5px;
     text-align: center; 
     font-size: 16px; 
-    border: 1px solid; 
-    cursor: pointer;
+    border: 1px solid #a3a5a7; 
+    cursor: pointer;    
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid #a3a5a7; 
+    padding: 5px;
+    font-size: 13px;
+}
+.ng-invalid{
+    color: #cb3840;
 }

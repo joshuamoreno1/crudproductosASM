@@ -1,5 +1,5 @@
 <div class="managerproduct">
-    <table ng-if="isEditing || isAdding">
+    <table class="managerProductTable" ng-if="isEditing || isAdding">
         <tr>
             <td>Nombre</td>    
             <td><input type="text" ng-model="productselected.name" id="productName"/></td>    
@@ -21,7 +21,7 @@
             <td><input type="text" ng-model="productselected.producer" id="productProducer"/></td>   
         </tr>        
     </table>
-    <br/>
+    <br ng-if="isEditing || isAdding" />
     <button id="buttonAddNew" type="button" class="btn btn-default" ng-if="!isEditing && !isAdding" ng-click="addProduct()">Agregar Nuevo Producto</button>
     <button id="buttonAccept" type="button" class="btn btn-default" ng-if="isEditing || isAdding" ng-click="accept()">Listo!</button>
     <button id="buttonCancel" type="button" class="btn btn-default" ng-if="isEditing || isAdding" ng-click="cancel()">Cancelar</button>

@@ -15,8 +15,8 @@
             <td>{{p.value}}</td>
             <td>{{p.producer}}</td>   
             <td>
-                <a ng-click="editProduct(p)">Editar</a>
-                <a ng-click="deleteProduct(p)">Eliminar</a>
+                <a ng-click="editProduct(p)" id="edit{{$index}}">Editar</a>
+                <a ng-click="deleteProduct(p)" id="delete{{$index}}">Eliminar</a>
             </td>   
         </tr>
     </table>
