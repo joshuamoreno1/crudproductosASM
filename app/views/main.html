@@ -1,8 +1,26 @@
-<div class=content>
-    <div class="left">
-        <tableproducts/>
-    </div>
-    <div class="right">
-        <managerproduct productselected="productselected"></managerproduct>
-    </div>
+<div layout="vertical" layout-fill>
+    <section layout="horizontal" flex>
+        <md-content flex>
+            <div layout="vertical" layout-fill layout-align="left center">
+                <md-toolbar class="md-theme-light">
+                    <h1 class="md-toolbar-tools">Lista de Productos</h1>
+                </md-toolbar>
+                <br/>
+                <div layout="vertical" layout-align="center center">
+                    <md-button id="buttonAddNew" type="button" class="md-button-raised md-button-colored" ng-disabled="Utils.isEditing || Utils.isAdding" ng-click="addProduct()">Agregar Nuevo Producto</md-button>
+                </div>
+                <div>
+                    <tableproducts></tableproducts>
+                </div>
+            </div>
+        </md-content>
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" component-id="right" ng-show="Utils.isEditing || Utils.isAdding">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Gestionar Producto</h1>
+            </md-toolbar>
+            <md-content class="md-content-padding">
+                <managerproduct productselected="productselected"></managerproduct>
+            </md-content>
+        </md-sidenav>
+    </section>
 </div>

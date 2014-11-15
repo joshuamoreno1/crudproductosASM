@@ -1,28 +1,61 @@
-<div class="managerproduct">
-    <table class="managerProductTable" ng-if="isEditing || isAdding">
-        <tr>
-            <td>Nombre</td>    
-            <td><input type="text" ng-model="productselected.name" id="productName"/></td>    
-        </tr>
-        <tr>            
-            <td>Costo($)</td>
-            <td><input type="number" ng-model="productselected.cost" id="productCost" ng-change="calcValueGain(productselected.cost,productselected.gain)"/></td>            
-        </tr>       
-        <tr>
-            <td>Ganacia(%)</td>  
-            <td><input type="text" ng-model="productselected.gain" id="productGain" ng-change="calcValueGain(productselected.cost,productselected.gain)"/></td> 
-        </tr>        
-        <tr>           
-            <td>Valor</td>
-            <td><input type="number" ng-model="productselected.value" readonly id="productValue"/></td>           
-        </tr>       
-        <tr>            
-            <td>Productor</td>   
-            <td><input type="text" ng-model="productselected.producer" id="productProducer"/></td>   
-        </tr>        
-    </table>
-    <br ng-if="isEditing || isAdding" />
-    <button id="buttonAddNew" type="button" class="btn btn-default" ng-if="!isEditing && !isAdding" ng-click="addProduct()">Agregar Nuevo Producto</button>
-    <button id="buttonAccept" type="button" class="btn btn-default" ng-if="isEditing || isAdding" ng-click="accept()">Listo!</button>
-    <button id="buttonCancel" type="button" class="btn btn-default" ng-if="isEditing || isAdding" ng-click="cancel()">Cancelar</button>
-</div>
+<span>
+    <md-list>
+        <md-item>
+            <md-item-content>
+                <div class="md-tile-content">
+                    <h4>Nombre</h3>                    
+                </div>
+                <div class="md-tile-right">
+                    <input type="text" ng-model="productselected.productDTO.name" id="productName" />                   
+                </div>
+            </md-item-content>
+            <md-divider></md-divider>
+        </md-item> 
+        <md-item>
+            <md-item-content>
+                <div class="md-tile-content">
+                    <h4>Costo($)</h3>                    
+                </div>
+                <div class="md-tile-right">
+                   <input type="number" ng-model="productselected.productDTO.cost" id="productCost" ng-change="calcValueGain(productselected.productDTO.cost,productselected.productDTO.gain)" />           
+                </div>
+            </md-item-content>
+            <md-divider></md-divider>
+        </md-item>
+        <md-item>
+            <md-item-content>
+                <div class="md-tile-content">
+                    <h4>Ganacia(%)</h3>                    
+                </div>
+                <div class="md-tile-right">
+                  <input type="text" ng-model="productselected.productDTO.gain" id="productGain" ng-change="calcValueGain(productselected.productDTO.cost,productselected.productDTO.gain)" />         
+                </div>
+            </md-item-content>
+            <md-divider></md-divider>
+        </md-item>
+         <md-item>
+            <md-item-content>
+                <div class="md-tile-content">
+                    <h4>Valor</h3>                    
+                </div>
+                <div class="md-tile-right">
+                  <input type="number" ng-model="productselected.productDTO.value" readonly id="productValue" />       
+                </div>
+            </md-item-content>
+            <md-divider></md-divider>
+        </md-item>
+        <md-item>
+            <md-item-content>
+                <div class="md-tile-content">
+                    <h4>Productor</h3>                    
+                </div>
+                <div class="md-tile-right">
+                   <input type="text" ng-model="productselected.productDTO.producer" id="productProducer" /> 
+                </div>
+            </md-item-content>            
+        </md-item>
+    </md-list>
+  
+        <md-button id="buttonAccept" type="button" class="md-button-raised md-button-colored" ng-if="Utils.isEditing || Utils.isAdding" ng-click="accept($event)">Listo!</md-button>
+        <md-button id="buttonCancel" type="button" class="md-button-raised" ng-if="Utils.isEditing || Utils.isAdding" ng-click="cancel()">Cancelar</md-button>
+</span>

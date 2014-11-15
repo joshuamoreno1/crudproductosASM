@@ -3,3 +3,11 @@ dist
 .tmp
 .sass-cache
 bower_components
+bin
+.settings
+project/project
+project/target
+target
+.classpath
+.project
+.editorconfig
