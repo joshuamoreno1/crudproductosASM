@@ -6,10 +6,11 @@
  * # ProductServiceRest
  * Factory in the productosApp.
  */
+var urlServices = 'http://localhost:8080';
 angular.module('productosApp')
     .factory('ProductService', function($resource) {
         return $resource(
-            '/rest/productos/:id', {
+            urlServices + '/rest/productos/:id', {
                 id: "@id"
             }, {
                 'update': {
@@ -17,4 +18,4 @@ angular.module('productosApp')
                 }
             }
         );
-    });
+});
