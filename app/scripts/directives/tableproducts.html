@@ -3,7 +3,7 @@
         <md-item ng-repeat="p in listProducts track by $index">
             <md-item-content>
                 <div class="md-tile-content">
-                    <h3>{{p.productDTO.name}}</h3>
+                    <h3 class="nameProduct">{{p.productDTO.name}}</h3>
                     <h4>Precio: ${{p.productDTO.value}}</h4>
                     <p>
                         Costo:{{p.productDTO.cost}} - Productor: {{p.productDTO.producer}}

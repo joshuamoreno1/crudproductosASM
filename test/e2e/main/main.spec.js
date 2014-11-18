@@ -60,12 +60,13 @@ describe('CRUD Products', function() {
                 element(by.id('productName')).clear().sendKeys(newName);
                 element(by.id('productCost')).clear().sendKeys(2000);
                 element(by.id('productGain')).clear().sendKeys(15);
-                element(by.id('productProducer')).clear().sendKeys('Campesinos');
-                element(by.id('buttonAccept')).click().then(function() {                     
-                    ptor.findElement(by.repeater('p in listProducts').row(0).column('name')).
-                    getText().then(function(text) {
-                        expect(text).toEqual(newName);
-                    });
+                element(by.id('productProducer')).clear().sendKeys('Campesinos');				
+                element(by.id('buttonAccept')).click().then(function() {  
+					ptor.sleep(2000);
+                    element.all(by.repeater('p in listProducts')).then(function(rows2){									
+					   var nameProduct = rows2[0].element(by.className('nameProduct'));
+					   expect(nameProduct.getText()).toEqual(newName);
+					});
                 },function(){
                     expect(false).toBe(true);
                 });

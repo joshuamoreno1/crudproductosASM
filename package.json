@@ -36,13 +36,12 @@
     "load-grunt-tasks": "^0.4.0",
     "protractor": "~1.2.0",
     "time-grunt": "^0.3.1",
-    "http-backend-proxy":"1.4.1"
+    "http-backend-proxy": "1.4.1"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test",      
-    "install": "node node_modules/protractor/bin/webdriver-manager update"
+    "install": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   }
 }
